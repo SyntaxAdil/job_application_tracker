@@ -101,6 +101,15 @@ function renderData(to, from) {
                 </div>
                 <span><i class="fas fa-trash"></i></span>
               </div>
+                 <div class="flex items-center gap-2 text-slate-400 mt-2 text-sm  ">
+                <span class="job-type">${item.jobType}</span>
+                <span class="w-1 h-1 inline-block rounded-full bg-slate-400"></span>
+                <span class="job-time">${item.jobTime}</span>
+                <span class="w-1 h-1 inline-block rounded-full bg-slate-400"></span>
+                <span class="job-salary">${item.jobSalary}</span>
+                
+
+              </div>
               <div class="space-y-4 my-4">
                 <span
                   class="job-status px-4 py-2 rounded-md ${item.jobStatus === "Interview" ? "bg-success" : item.jobStatus === "Applied" ? "bg-info" : "bg-error"} uppercase inline-block font-semibold text-[12px]"

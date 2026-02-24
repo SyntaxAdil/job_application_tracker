@@ -105,6 +105,9 @@ document.addEventListener("click", (e) => {
   const jobInfo = {
     jobTitle: card.querySelector("h3").innerText,
     jobPosition: card.querySelector(".job-position").innerText,
+    jobType: card.querySelector(".job-type").innerText,
+    jobTime: card.querySelector(".job-time").innerText,
+    jobSalary: card.querySelector(".job-salary").innerText,
     jobStatus: card.querySelector(".job-status").innerText,
     jobDescription: card.querySelector(".job-description").innerText,
   };

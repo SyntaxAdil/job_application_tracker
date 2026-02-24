@@ -33,7 +33,7 @@ document.querySelectorAll(".class-name");
 ```js
 document.createElement("div")
 ```
-it the createElement function we pased what element we want to create as a parameter.
+in the createElement function we pased what element we want to create as a parameter.
 
 - To insert a new element we can select it parent and used `.appendChild()` function to insert any element into the parent . we passed the element name in the appendChild() parameter
 

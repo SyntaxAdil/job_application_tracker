@@ -1,0 +1,41 @@
+1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+
+Ans:
+*getElementById is used to target a specific html element which has the particular id
+document.getElementById("id-name")
+*getElementsByClassName is used to target the elements that has the same class name.
+document.getElementsByClassName("class-name")
+*querySlector is used to target any element which has id or class it accpet the first element with the specific id or classname
+document.querySelector(".class-name") / document.querySelector("#id-name")
+*querySelectorAll is used to target those elements which has the same id or classname . it is commonly used to target classes with the same name.
+document.querySelectorAll(".class-name");
+
+
+
+2. How do you create and insert a new element into the DOM?
+
+Ans: 
+*To create an element we use 
+document.createElement("div")
+it the createElement function we pased what element we want to create as a parameter.
+* To insert a new element we can select it parent and used .appendChild() function to insert any element into the parent . we passed the element name in the appendChild() parameter
+
+
+
+3. What is Event Bubbling? And how does it work?
+
+Ans:
+When we click on any element it also clicked by its parent and that parent and goes like a tree.
+Example: If we click on a button in a div it click to the button then to the div/
+
+4. What is Event Delegation in JavaScript? Why is it useful?
+
+Ans:  Event Delegation is a technique where we can give event listener to the parent instead of givving to all childres of the parent.
+Example: Instead of add event listener to a containers all child button we can simply give the event listener to its parent and access the child .
+
+5. What is the difference between preventDefault() and stopPropagation() methods?
+
+Ans: 
+preventDefault() is used to prevent the default behaivor of the browser .for an example-> if we do not want to reload the page when the form has been submitted. we can simply used preventDefault() to stop the default browser behaivor
+
+stopPropagation() is used to stop event bubbling effect. it stop to propagate to the parent.

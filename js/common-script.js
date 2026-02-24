@@ -26,7 +26,7 @@ function jobStatusBadgeToggle(jobStatusBadge, text, newClass) {
   jobStatusBadge.classList.remove("custom-job-status");
   jobStatusBadge.classList.remove("bg-error");
   jobStatusBadge.classList.remove("bg-success");
-
+  jobStatusBadge.classList.remove("bg-info");
   jobStatusBadge.classList.add(newClass);
 }
 
@@ -35,6 +35,7 @@ function cardClassToggle(card, newClass) {
   card.classList.remove("border-slate-700");
   card.classList.remove("border-green-500");
   card.classList.remove("border-blue-500");
+  
 
   card.classList.add(newClass);
 }

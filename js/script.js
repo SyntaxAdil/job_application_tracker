@@ -51,9 +51,12 @@ document.addEventListener("click", (e) => {
   if (!card) return;
   if (e.target.closest(".fa-trash")) {
     dltModal.classList.remove("hidden");
-    dltModal.addEventListener("click", (d) => {
+
+    function handleDlt(d) {
       if (d.target.closest(".btn-success")) {
         dltModal.classList.add("hidden");
+        dltModal.removeEventListener("click", handleDlt);
+
         Array.from(allSections.children).forEach((cards) => {
           if (
             cards.querySelector("h3").innerText.trim() ===
@@ -70,7 +73,6 @@ document.addEventListener("click", (e) => {
           .querySelector(".job-position")
           .innerText.trim();
 
-        // dlt logic
         interviewArr = interviewArr.filter(
           (i) => !(i.jobTitle === jobTitle && i.jobPosition === jobPosition),
         );
@@ -80,19 +82,21 @@ document.addEventListener("click", (e) => {
         appliedArr = appliedArr.filter(
           (i) => !(i.jobTitle === jobTitle && i.jobPosition === jobPosition),
         );
+
         renderAll();
         syncTotalJobs();
-        
+
         if (allSections.children.length === 0) {
           getFromId("no-jobs").classList.remove("hidden");
         }
         updateCount();
-        return;
       } else if (d.target.closest(".btn-error")) {
         dltModal.classList.add("hidden");
-        return;
+        dltModal.removeEventListener("click", handleDlt);
       }
-    });
+    }
+
+    dltModal.addEventListener("click", handleDlt);
   }
   if (
     !e.target.closest(".btn-success") &&
@@ -139,7 +143,7 @@ document.addEventListener("click", (e) => {
 
   renderAll();
   updateCount();
-  syncTotalJobs()
+  syncTotalJobs();
 });
 
 totalJobs.innerHTML = ` ${zeroAdd(allSections.children)} Jobs`;
